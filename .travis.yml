@@ -6,9 +6,9 @@ compiler:
 
 env:
  matrix:
-  - TEST=python-api TYPE=unittest
-  - TEST=python-api TYPE=integration
-  - TEST=module TYPE=python
+#  - TEST=python-api TYPE=unittest
+#  - TEST=python-api TYPE=integration
+#  - TEST=module TYPE=python
   - TEST=module TYPE=c
 
 install:
