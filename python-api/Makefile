@@ -54,3 +54,6 @@ clean:
 
 
 test: lint unittests integration clean
+
+generate-frames:
+	python tests/integrationtests/generate_reference_frames.py	

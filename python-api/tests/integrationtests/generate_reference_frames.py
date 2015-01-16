@@ -3,6 +3,10 @@ Used for generating reference frames
 Usually should be run just once
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(__file__, "../..")))
+
 from integrationtests.compare import GenerateReferenceFrames
 from integrationtests.test_controller import TestSetCompositeMode
 from integrationtests.test_controller import TestAdjustPIP
