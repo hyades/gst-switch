@@ -70,8 +70,8 @@ class TestTestSources(object):
 
         def __init__(self,
                      port,
-                     width=300,
-                     height=200,
+                     width=1280,
+                     height=720,
                      pattern=None,
                      timeoverlay=False,
                      clockoverlay=False):

@@ -104,8 +104,8 @@ class TestSources(object):
         self._running_tests_audio = tests
 
     def new_test_video(self,
-                       width=300,
-                       height=200,
+                       width=1280,
+                       height=720,
                        pattern=None,
                        timeoverlay=False,
                        clockoverlay=False):

@@ -21,7 +21,7 @@ Gst.init(None)
 
 
 
-PATH = '/usr/bin/'
+PATH = '../../tools/'
 INTERVAL = 1.0
 
 
@@ -33,17 +33,17 @@ a_port = s.audio_port
 try:
     s.run()
     
-    cmd_vid1 = PATH
-    cmd_vid2 = PATH
-    cmd_vid1 += """gst-launch-1.0 videotestsrc pattern=1 ! \
+    # cmd_vid1 = PATH
+    # cmd_vid2 = PATH
+    cmd_vid1 = """gst-launch-1.0 videotestsrc pattern=1 is-live=true ! \
                 video/x-raw, width=300, height=200 !\
                 gdppay !
                 tcpclientsink port={0}
                 """.format(v_port)
     print cmd_vid1
 
-    cmd_vid2 += """gst-launch-1.0 videotestsrc ! \
-                video/x-raw, width=300, height=200 !\
+    cmd_vid2 = """gst-launch-1.0 videotestsrc is-live=true ! \
+                video/x-raw, width=300, height=200 ! \
                 gdppay !
                 tcpclientsink port={0}
                 """.format(v_port)

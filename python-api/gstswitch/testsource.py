@@ -71,8 +71,8 @@ class VideoPipeline(BasePipeline):
             self,
             port,
             host='localhost',
-            width=300,
-            height=200,
+            width=1280,
+            height=720,
             pattern=None,
             timeoverlay=False,
             clockoverlay=False):
@@ -310,8 +310,8 @@ class VideoSrc(object):
     def __init__(
             self,
             port,
-            width=300,
-            height=200,
+            width=1280,
+            height=720,
             pattern=None,
             timeoverlay=False,
             clockoverlay=False):
