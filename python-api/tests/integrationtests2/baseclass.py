@@ -307,12 +307,19 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
 
     def upload_image(self, filename):
         """ upload the specified image to imgurl"""
-        self.log.debug("calling imgurbash.sh %s", filename)
-        print(subprocess.check_output([
-            'bash',
-            './imgurbash.sh',
-            filename
-        ], timeout=5))
+        from imgurpython import ImgurClient
+        self.log.debug('Uploading file to imgur: {0}'.format(filename))
+        imgur_url = 'http://imgur.com/api/upload.xml'
+        client_id = '2a82340573d25b4'
+        client_secret = '19add6dbc4a411433b084beb57873895a0ec4a1d'
+        client = ImgurClient(client_id, client_secret)
+        try:
+
+            response = upload_from_path(filename, config=None, anon=True)
+            self.log.debug(response)
+        except:
+            self.log.warn("Upload failed")
+        
 
 
 class IntegrationTestbaseVideo(IntegrationTestbaseCompare):

@@ -22,6 +22,8 @@ sudo pip3 install --upgrade -r requirements.txt
 
 # Needed for tests
 sudo apt-get -y install wget libav-tools
+sudo pip install imgurpython
+sudo pip3 install imgurpython
 
 # Needed for style checks
 sudo apt-get -y install indent
