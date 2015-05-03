@@ -8,7 +8,11 @@ import logging
 import tempfile
 import shlex
 import shutil
-import subprocess
+try:
+    import subprocess32 as subprocess
+except ImportError:
+    import subprocess
+
 from glob import glob
 import numpy
 import scipy.misc
