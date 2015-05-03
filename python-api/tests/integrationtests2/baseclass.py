@@ -312,7 +312,7 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
             'bash',
             './imgurbash.sh',
             filename
-        ]).decode('utf-8').strip()
+        ])
 
 
 class IntegrationTestbaseVideo(IntegrationTestbaseCompare):
