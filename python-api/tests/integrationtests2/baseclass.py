@@ -191,7 +191,8 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
                 break
 
         if not success:
-            self.log.debug("last turn failed, saving images for human inspection")
+            self.log.debug("last turn failed, "
+                           "saving images for human inspection")
             self.save_images(filename, img, expected, diff)
 
         assert success
