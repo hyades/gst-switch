@@ -273,8 +273,8 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
             img.astype(numpy.uint8))
 
         if self.is_running_in_ci():
-            self.log.warn("uploaded failed frame as: %s",
-                          self.upload_image(filename))
+            self.log.warn("uploaded failed frame")
+            self.upload_image(filename)
         else:
             self.log.warn("saved failed frame as: %s",
                           filename)
@@ -286,8 +286,8 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
             expected.astype(numpy.uint8))
 
         if self.is_running_in_ci():
-            self.log.warn("uploaded expected frame as: %s",
-                          self.upload_image(filename))
+            self.log.warn("uploaded expected frame")
+            self.upload_image(filename)
         else:
             self.log.warn("saved expected frame as: %s",
                           filename)
@@ -299,8 +299,8 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
             diff.astype(numpy.uint8))
 
         if self.is_running_in_ci():
-            self.log.warn("uploaded difference frame as: %s",
-                          self.upload_image(filename))
+            self.log.warn("uploaded difference frame")
+            self.upload_image(filename)
         else:
             self.log.warn("saved difference frame as: %s",
                           filename)
@@ -308,11 +308,11 @@ class IntegrationTestbaseCompare(IntegrationTestbase):
     def upload_image(self, filename):
         """ upload the specified image to imgurl"""
         self.log.debug("calling imgurbash.sh %s", filename)
-        return subprocess.check_output([
+        print(subprocess.check_output([
             'bash',
             './imgurbash.sh',
             filename
-        ], timeout=5).decode('utf-8').strip()
+        ], timeout=5))
 
 
 class IntegrationTestbaseVideo(IntegrationTestbaseCompare):
